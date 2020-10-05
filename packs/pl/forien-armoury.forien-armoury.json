@@ -9,12 +9,12 @@
 		{
 			"id": "Aqshy Ingredient",
 			"name": "Składnik Aqshy",
-			"description": "<p>Typowy składnik powszechnie wykorzystywany w splataniu Aqshy.</p>\n<p><em>Cena składnika zależy od zaklęcia, do którego jest przeznaczony. Ustaw cenę na X s, gdzie X jest równe PZ.&nbsp;</em></p>"
+			"description": "<p>Typowy składnik powszechnie wykorzystywany w splataniu Aqshy.</p>\n<p><em>Cena składnika zależy od zaklęcia, do którego jest przeznaczony. Ustaw cenę na X s, gdzie X jest równe PZ.</em></p>"
 		},
 		{
 			"id": "Arming Sword",
-			"name": "Arming Sword",
-			"description": "<p>Knightly Weapon</p>",
+			"name": "Miecz prosty",
+			"description": "<p>Broń rycerska</p>",
 			"qualities": "",
 			"flaws": "",
 			"special": ""
@@ -22,28 +22,28 @@
 		{
 			"id": "Azyr Ingredient",
 			"name": "Składnik Azyr",
-			"description": "<p>Typowy składnik powszechnie wykorzystywany w splataniu Azyr.</p>\n<p><em>Cena składnika zależy od zaklęcia, do którego jest przeznaczony. Ustaw cenę na X s, gdzie X jest równe PZ.&nbsp;</em></p>"
+			"description": "<p>Typowy składnik powszechnie wykorzystywany w splataniu Azyr.</p>\n<p><em>Cena składnika zależy od zaklęcia, do którego jest przeznaczony. Ustaw cenę na X s, gdzie X jest równe PZ.</em></p>"
 		},
 		{
 			"id": "Backsword",
 			"name": "Pałasz",
-			"description": "<p>Knightly Weapon</p>",
-			"qualities": "Slashing",
+			"description": "<p>Broń rycerska</p>",
+			"qualities": "Tnący",
 			"flaws": "",
 			"special": ""
 		},
 		{
 			"id": "Bardiche",
 			"name": "Berdysz",
-			"description": "<p>Knightly Weapon</p>",
-			"qualities": "Hack",
+			"description": "<p>Broń rycerska</p>",
+			"qualities": "Rąbiąca",
 			"flaws": "",
 			"special": ""
 		},
 		{
 			"id": "Basket-hilt Sword",
 			"name": "Miecz o rękojeści z koszykiem",
-			"description": "<p>Knightly Weapon</p>",
+			"description": "<p>Broń rycerska</p>",
 			"qualities": "",
 			"flaws": "",
 			"special": ""
@@ -51,32 +51,32 @@
 		{
 			"id": "Battleaxe",
 			"name": "Topór bitewny",
-			"description": "<p>Knightly Weapon</p>",
-			"qualities": "Hack",
+			"description": "<p>Broń rycerska</p>",
+			"qualities": "Rąbiąca",
 			"flaws": "",
 			"special": ""
 		},
 		{
 			"id": "Bear Spear",
 			"name": "Włócznia na niedźwiedzie",
-			"description": "<p>Tool Grade Weapon</p>",
-			"qualities": "Impale",
+			"description": "<p>Broń łowcy</p>",
+			"qualities": "Nadziewająca",
 			"flaws": "",
 			"special": ""
 		},
 		{
 			"id": "Bec de Corbin",
 			"name": "Nadziak",
-			"description": "<p>Knightly Weapon</p>\n<p><em>bec-de-corbin</em>",
-			"qualities": "Damaging,Defensive,Impale,Pummel",
+			"description": "<p>Broń rycerska</p>\n<p><em>bec-de-corbin</em>",
+			"qualities": "Przebijająca,Parująca,Nadziewająca,Ogłuszająca",
 			"flaws": "",
-			"special": ""
+			"special": "Przed wykonaniem ataku należy zadecydować, której cechy użyć: Przebijającej i Nadziewającej, czy Ogłuszającej i Parującej"
 		},
 		{
 			"id": "Bodkin Arrow",
 			"name": "Strzała iglicowa",
 			"description": "<p>Rodzaj strzały używany przez żołnierzy podczas bitew, opracowana aby przebijać część pancerzy noszonych przez wrogich wojaków.</p>",
-			"qualities": "Penetrating",
+			"qualities": "Przekłuwająca",
 			"flaws": "",
 			"special": ""
 		},
@@ -84,7 +84,7 @@
 			"id": "Bodkin Bolt",
 			"name": "Bełt iglicowy",
 			"description": "<p>Rodzaj bełtu używany przez żołnierzy podczas bitew, opracowana aby przebijać część pancerzy noszonych przez wrogich wojaków.</p>",
-			"qualities": "Impale, Penetrating, Recoverable",
+			"qualities": "Nadziewająca,Przekłuwająca,Odzyskiwalny",
 			"flaws": "",
 			"special": ""
 		},
@@ -92,28 +92,28 @@
 			"id": "Breastplate",
 			"name": "Napierśnik",
 			"description": "<p>Przednia część zbroi wykonana z płyt metalowych.</p>",
-			"qualities": "Impenetrable",
-			"flaws": "Partial",
+			"qualities": "Nieprzebijalny",
+			"flaws": "Częściowy",
 			"special": ""
 		},
 		{
 			"id": "Broad Bolt",
 			"name": "Bełt bijakowy",
 			"description": "<p>Bełt z ciężkim, szerokim grotem, który może spowodować silne obrażenia od uderzenia obuchem.</p>",
-			"qualities": "Pummel, Sturdy",
+			"qualities": "Ogłuszająca,Solidny",
 			"flaws": "",
 			"special": ""
 		},
 		{
 			"id": "Chamon Ingredient",
 			"name": "Składnik Chamon",
-			"description": "<p>Typowy składnik powszechnie wykorzystywany w splataniu Chamon.</p>\n<p><em>Cena składnika zależy od zaklęcia, do którego jest przeznaczony. Ustaw cenę na X s, gdzie X jest równe PZ.&nbsp;</em></p>"
+			"description": "<p>Typowy składnik powszechnie wykorzystywany w splataniu Chamon.</p>\n<p><em>Cena składnika zależy od zaklęcia, do którego jest przeznaczony. Ustaw cenę na X s, gdzie X jest równe PZ.</em></p>"
 		},
 		{
 			"id": "Club",
 			"name": "Pałka",
-			"description": "<p>Back-Alley Weapon</p>",
-			"qualities": "Pummel",
+			"description": "<p>Broń bandytów</p>",
+			"qualities": "Ogłuszająca",
 			"flaws": "",
 			"special": ""
 		},
@@ -121,38 +121,38 @@
 			"id": "Cracker Bullet",
 			"name": "Pocisk-petarda",
 			"description": "<p>Pocisk do procy, który przy uderzeniu eksploduje w niewielkim wybuchu, rozsyłając po okolicy malutkie fragmenty.</p>",
-			"qualities": "Blast 2, Damaging",
-			"flaws": "Dangerous, Imprecise, Unrecoverable",
+			"qualities": "Odłamkowa 2,Przebijająca",
+			"flaws": "Niebezpieczna,Nieprecyzyjna,Nieodzyskiwalny",
 			"special": ""
 		},
 		{
 			"id": "Crowbar",
 			"name": "Łom",
-			"description": "<p>Back-Alley Weapon</p>",
-			"qualities": "Pummel,Slow",
-			"flaws": "",
+			"description": "<p>Broń bandytów</p>",
+			"qualities": "Ogłuszająca",
+			"flaws": "Powolna",
 			"special": ""
 		},
 		{
 			"id": "Cuirass",
 			"name": "Kirys",
 			"description": "<p>Zbroja ochraniająca korpus składająca się z dwóch części: ochraniającego pierś napierśnika i osłaniającego plecy naplecznika.</p>",
-			"qualities": "Impenetrable",
-			"flaws": "Weakpoints",
+			"qualities": "Nieprzebijalny",
+			"flaws": "Wrażliwe punkty",
 			"special": ""
 		},
 		{
 			"id": "Cutlass",
 			"name": "Kordelas",
-			"description": "<p>Commoner's Weapon</p>",
-			"qualities": "Slashing",
+			"description": "<p>Broń powszechna</p>",
+			"qualities": "Tnący",
 			"flaws": "",
 			"special": ""
 		},
 		{
 			"id": "Dirk",
 			"name": "Kindźał",
-			"description": "<p>Commoner's Weapon</p>",
+			"description": "<p>Broń powszechna</p>",
 			"qualities": "",
 			"flaws": "",
 			"special": ""
@@ -161,15 +161,15 @@
 			"id": "Estoc",
 			"name": "Estok",
 			"description": "",
-			"qualities": "Damaging, Impale",
+			"qualities": "Przebijająca,Nadziewająca",
 			"flaws": "",
 			"special": ""
 		},
 		{
 			"id": "Falchion",
 			"name": "Tasak",
-			"description": "<p>Commoner's Weapon</p>",
-			"qualities": "Slashing",
+			"description": "<p>Broń powszechna<</p>",
+			"qualities": "Tnący",
 			"flaws": "",
 			"special": ""
 		},
@@ -208,34 +208,34 @@
 		{
 			"id": "Ghur Ingredient",
 			"name": "Składnik Ghur",
-			"description": "<p>Typowy składnik powszechnie wykorzystywany w splataniu Ghur. Często używane składniki to zwierzęce futro, skóry, kości oplecione ścięgnami, wymazanye krwią w runy. Pazury często są rzeźbione, organy wysuszane, a pióra maczane w rzadko występujących cieczach. Zdarza się, że wśród składników można znaleźć także ekskrementy, urynę i inne wydzieliny.</p>\n<p><em>Cena składnika zależy od zaklęcia, do którego jest przeznaczony. Ustaw cenę na X s, gdzie X jest równe PZ.&nbsp;</em></p>"
+			"description": "<p>Typowy składnik powszechnie wykorzystywany w splataniu Ghur. Często używane składniki to zwierzęce futro, skóry, kości oplecione ścięgnami, wymazanye krwią w runy. Pazury często są rzeźbione, organy wysuszane, a pióra maczane w rzadko występujących cieczach. Zdarza się, że wśród składników można znaleźć także ekskrementy, urynę i inne wydzieliny.</p>\n<p><em>Cena składnika zależy od zaklęcia, do którego jest przeznaczony. Ustaw cenę na X s, gdzie X jest równe PZ.</em></p>"
 		},
 		{
 			"id": "Ghyran Ingredient",
 			"name": "Składnik Ghyran",
-			"description": "<p>Typowy składnik powszechnie wykorzystywany w splataniu Ghyran.</p>\n<p><em>Cena składnika zależy od zaklęcia, do którego jest przeznaczony. Ustaw cenę na X s, gdzie X jest równe PZ.&nbsp;</em></p>"
+			"description": "<p>Typowy składnik powszechnie wykorzystywany w splataniu Ghyran.</p>\n<p><em>Cena składnika zależy od zaklęcia, do którego jest przeznaczony. Ustaw cenę na X s, gdzie X jest równe PZ.</em></p>"
 		},
 		{
 			"id": "Hatchet",
 			"name": "Siekiera",
-			"description": "<p>Tool Grade Weapon</p>",
-			"qualities": "Undamaging",
-			"flaws": "",
+			"description": "<p>Typowe narzędzia</p>",
+			"qualities": "",
+			"flaws": "Tępa",
 			"special": ""
 		},
 		{
 			"id": "Heater Shield",
 			"name": "Tarcza rycerska",
-			"description": "<p>Knightly Weapon</p>",
-			"qualities": "Shield 2,Defensive",
+			"description": "<p>Broń Rycerska</p>",
+			"qualities": "Tarcza 2,Parująca",
 			"flaws": "",
 			"special": ""
 		},
 		{
 			"id": "Heavy Lance",
 			"name": "Ciężka lanca",
-			"description": "<p>Knightly Weapon</p>",
-			"qualities": "Impact,Impale",
+			"description": "<p>Broń Rycerska</p>",
+			"qualities": "Nadziewająca,Druzgocząca",
 			"flaws": "",
 			"special": ""
 		},
@@ -247,8 +247,8 @@
 		{
 			"id": "Horseman's Pick",
 			"name": "Nadziak Kawaleryjski",
-			"description": "<p>Knightly Weapon</p>",
-			"qualities": "Slashing",
+			"description": "<p>Broń Rycerska</p>",
+			"qualities": "Tnący",
 			"flaws": "",
 			"special": ""
 		},
@@ -256,27 +256,27 @@
 			"id": "Hunting Arrow",
 			"name": "Strzała myśliwska",
 			"description": "<p>Specjalnie zaprojektowana strzała wykorzystywana do polowania na dziką zwierzyną. Posiada bardzo szeroki i ciężki grot, który wcina się głęboko w ciało zwierzyty i powoduje rozległe obrażenia kosztem zasięgu.</p>",
-			"qualities": "Impale, Sturdy",
-			"flaws": "Unreliable",
+			"qualities": "Nadziewająca,Solidny",
+			"flaws": "Zawodny",
 			"special": ""
 		},
 		{
 			"id": "Hunting Bolt",
 			"name": "Bełt myśliwski",
 			"description": "<p>Specjalnie zaprojektowany bełt wykorzystywany do polowania na dziką zwierzyną. Posiada bardzo szeroki i ciężki grot, który wcina się głęboko w ciało zwierzyty i powoduje rozległe obrażenia kosztem zasięgu.</p>",
-			"qualities": "Impale, Sturdy",
-			"flaws": "Unreliable",
+			"qualities": "Nadziewająca,Solidny",
+			"flaws": "Zawodny",
 			"special": ""
 		},
 		{
 			"id": "Hysh Ingredient",
 			"name": "Składnik Hysh",
-			"description": "<p>Typowy składnik powszechnie wykorzystywany w splataniu Hysh.</p>\n<p><em>Cena składnika zależy od zaklęcia, do którego jest przeznaczony. Ustaw cenę na X s, gdzie X jest równe PZ.&nbsp;</em></p>"
+			"description": "<p>Typowy składnik powszechnie wykorzystywany w splataniu Hysh.</p>\n<p><em>Cena składnika zależy od zaklęcia, do którego jest przeznaczony. Ustaw cenę na X s, gdzie X jest równe PZ.</em></p>"
 		},
 		{
 			"id": "Katzbalger",
 			"name": "Katzbalger",
-			"description": "<p>Knightly Weapon</p>",
+			"description": "<p>Broń Rycerska</p>",
 			"qualities": "",
 			"flaws": "",
 			"special": ""
@@ -285,7 +285,7 @@
 			"id": "Lead Bullet",
 			"name": "Pocisk ołowiany",
 			"description": "",
-			"qualities": "Pummel, Unbreakable",
+			"qualities": "Ogłuszająca,Niełamliwa",
 			"flaws": "",
 			"special": ""
 		},
@@ -300,16 +300,16 @@
 		{
 			"id": "Leather Bracers",
 			"name": "Skórzane naramienniki",
-			"description": "<p>Bracers of boiled and hardened leather</p>",
+			"description": "<p>Naramienniki z hartowanej skóry</p>",
 			"qualities": "",
-			"flaws": "Weakpoints",
+			"flaws": "Wrażliwe punkty",
 			"special": ""
 		},
 		{
 			"id": "Leather Jack",
 			"name": "Skórzana kamizelka",
 			"description": "",
-			"qualities": "Durable",
+			"qualities": "Wytrzymały",
 			"flaws": "",
 			"special": ""
 		},
@@ -317,7 +317,7 @@
 			"id": "Leather Jerkin",
 			"name": "Skórzana kurta",
 			"description": "",
-			"qualities": "Durable",
+			"qualities": "Wytrzymały",
 			"flaws": "",
 			"special": ""
 		},
@@ -325,7 +325,7 @@
 			"id": "Leather Leggings",
 			"name": "Skórzane nagolenniki",
 			"description": "",
-			"qualities": "Durable",
+			"qualities": "Wytrzymały",
 			"flaws": "",
 			"special": ""
 		},
@@ -333,15 +333,15 @@
 			"id": "Leather Skullcap",
 			"name": "Skórzany czepek",
 			"description": "",
-			"qualities": "Durable",
-			"flaws": "Ugly",
+			"qualities": "Wytrzymały",
+			"flaws": "Brzydki",
 			"special": ""
 		},
 		{
 			"id": "Light Lance",
 			"name": "Lekka Lanca",
-			"description": "<p>Knightly Weapon</p>",
-			"qualities": "Impact,Impale",
+			"description": "<p>Broń Rycerska</p>",
+			"qualities": "Nadziewająca,Druzgocząca",
 			"flaws": "",
 			"special": ""
 		},
@@ -356,24 +356,24 @@
 		{
 			"id": "Longsword",
 			"name": "Długi miecz",
-			"description": "<p>Knightly Weapon</p>",
-			"qualities": "Damaging,Defensive",
+			"description": "<p>Broń Rycerska</p>",
+			"qualities": "Parująca,Przebijająca",
 			"flaws": "",
 			"special": ""
 		},
 		{
 			"id": "Lucerne",
 			"name": "Młot lucereński",
-			"description": "<p>Knightly Weapon</p>",
-			"qualities": "Damaging,Defensive,Impale,Pummel",
+			"description": "<p>Broń Rycerska</p>",
+			"qualities": "Parująca,Przebijająca,Nadziewająca,Ogłuszająca",
 			"flaws": "",
 			"special": ""
 		},
 		{
 			"id": "Mace",
 			"name": "Buzdygan",
-			"description": "<p>Knightly Weapon</p>",
-			"qualities": "Pummel",
+			"description": "<p>Broń Rycerska</p>",
+			"qualities": "Ogłuszająca",
 			"flaws": "",
 			"special": ""
 		},
@@ -381,55 +381,55 @@
 			"id": "Mail Longcoat",
 			"name": "Kolczuga długa",
 			"description": "",
-			"qualities": "Flexible",
+			"qualities": "Giętki",
 			"flaws": "",
 			"special": ""
 		},
 		{
 			"id": "Mallet",
 			"name": "Drewniany młotek",
-			"description": "<p>Tool Grade Weapon</p>",
-			"qualities": "Pummel,Undamaging",
-			"flaws": "",
+			"description": "<p>Narzędzie</p>",
+			"qualities": "Ogłuszająca",
+			"flaws": "Tępa",
 			"special": ""
 		},
 		{
 			"id": "Marienburg Hammer",
 			"name": "Młot Marienburski",
 			"description": "",
-			"qualities": "Pummel, Impale",
+			"qualities": "Ogłuszająca,Nadziewająca",
 			"flaws": "",
 			"special": ""
 		},
 		{
 			"id": "Maul",
 			"name": "Młot bojowy",
-			"description": "<p>Knightly Weapon</p>",
-			"qualities": "Impact,Slow",
-			"flaws": "",
+			"description": "<p>Broń Rycerska</p>",
+			"qualities": "Druzgocząca",
+			"flaws": "Powolna",
 			"special": ""
 		},
 		{
 			"id": "Military Arrow",
 			"name": "Wojskowa strzała",
 			"description": "<p>Standardowa strzała wykorzystywana przez wojskowych łuczników.</p>",
-			"qualities": "Impale",
+			"qualities": "Nadziewająca",
 			"flaws": "",
 			"special": ""
 		},
 		{
 			"id": "Misericorde",
 			"name": "Mizerykordia",
-			"description": "<p>Knightly Weapon</p>",
-			"qualities": "Penetrating",
+			"description": "<p>Broń Rycerska</p>",
+			"qualities": "Przekłuwająca",
 			"flaws": "",
 			"special": ""
 		},
 		{
 			"id": "Morgenstern",
 			"name": "Morgensztern",
-			"description": "<p>Knightly Weapon</p>",
-			"qualities": "Penetrating, Pummel",
+			"description": "<p>Broń Rycerska</p>",
+			"qualities": "Przekłuwająca,Ogłuszająca",
 			"flaws": "",
 			"special": ""
 		},
@@ -437,72 +437,72 @@
 			"id": "Needle Bolt",
 			"name": "Bełt szpikulcowy",
 			"description": "<p>Drewniany bełt o bardzo ostrym szpikulcu, zaprojektowany tak, aby jak najgłębiej spenetrować ciało przeciwnika, najlepiej się przy tym łamiąc.</p>",
-			"qualities": "Impale, Slashing",
-			"flaws": "Frail",
+			"qualities": "Nadziewająca,Tnący",
+			"flaws": "Kruchy",
 			"special": ""
 		},
 		{
 			"id": "Pickaxe",
 			"name": "Kilof",
-			"description": "<p>Tool Grade Weapon</p>",
-			"qualities": "Impale, Slow",
-			"flaws": "",
+			"description": "<p>Narzędzie</p>",
+			"qualities": "Nadziewająca",
+			"flaws": "Powolna",
 			"special": ""
 		},
 		{
 			"id": "Pitch Fork",
 			"name": "Widły",
-			"description": "<p>Tool Grade Weapon</p>",
-			"qualities": "Impale, Undamaging",
-			"flaws": "",
+			"description": "<p>Narzędzie</p>",
+			"qualities": "Nadziewająca",
+			"flaws": "Tępa",
 			"special": ""
 		},
 		{
 			"id": "Pollaxe",
 			"name": "Topór drzewcowy",
-			"description": "<p>Knightly Weapon</p>",
-			"qualities": "Defensive,Hack,Impale",
+			"description": "<p>Broń Rycerska</p>",
+			"qualities": "Parująca,Rąbiąca,Nadziewająca",
 			"flaws": "",
 			"special": ""
 		},
 		{
 			"id": "Rondel Dagger",
 			"name": "Sztylet tarczkowy",
-			"description": "<p>Commoner's Weapon</p>",
-			"qualities": "Undamaging",
-			"flaws": "",
+			"description": "<p>Broń powszechna</p>",
+			"qualities": "",
+			"flaws": "Tępa",
 			"special": ""
 		},
 		{
 			"id": "Sabre",
 			"name": "Szabla",
-			"description": "<p>Knightly Weapon</p>",
-			"qualities": "Slashing",
+			"description": "<p>Broń Rycerska</p>",
+			"qualities": "Tnący",
 			"flaws": "",
 			"special": ""
 		},
 		{
 			"id": "Scythe",
 			"name": "Kosa",
-			"description": "<p>Tool Grade Weapon</p>",
-			"qualities": "Damaging,Imprecise",
-			"flaws": "",
+			"description": "<p>Narzędzia</p>",
+			"qualities": "Przebijająca",
+			"flaws": "Nieprecyzyjna",
 			"special": ""
 		},
 		{
 			"id": "Shield (Kite)",
 			"name": "Tarcza łezkowa",
-			"description": "<p>Knightly Weapon</p>",
-			"qualities": "Shield 3,Defensive,Undamaging",
-			"flaws": "",
+			"description": "<p>Broń Rycerska</p>",
+			"qualities": "Tarcza 3,Parująca",
+			"flaws": "Tępa",
 			"special": ""
 		},
 		{
 			"id": "Shield (Round)",
 			"name": "Tarcza okrągła",
-			"description": "<p>Knightly Weapon</p>",
-			"qualities": "Shield 2,Defensive,Undamaging",
-			"flaws": "",
+			"description": "<p>Broń Rycerska</p>",
+			"qualities": "Tarcza 2,Parująca",
+			"flaws": "Tępa",
 			"special": ""
 		},
 		{
@@ -510,26 +510,26 @@
 			"name": "Tandetna strzałą",
 			"description": "<p>Strzała beznadziejnej jakości, często wytworzona bez odpowiednich narzędzi i warunków. Zwykle używana przez biednych lub bandytów.</p>",
 			"qualities": "",
-			"flaws": "Frail",
+			"flaws": "Kruchy",
 			"special": ""
 		},
 		{
 			"id": "Shyish Ingredient",
 			"name": "Składnik Shyish",
-			"description": "<p>Typowy składnik powszechnie wykorzystywany w splataniu Shyish.</p>\n<p><em>Cena składnika zależy od zaklęcia, do którego jest przeznaczony. Ustaw cenę na X s, gdzie X jest równe PZ.&nbsp;</em></p>"
+			"description": "<p>Typowy składnik powszechnie wykorzystywany w splataniu Shyish.</p>\n<p><em>Cena składnika zależy od zaklęcia, do którego jest przeznaczony. Ustaw cenę na X s, gdzie X jest równe PZ.</em></p>"
 		},
 		{
 			"id": "Side-Sword",
 			"name": "Szpada",
 			"description": "<p>Commoner's Weapon</p>\n<em>Spada da lato</em>",
-			"qualities": "Fast,Precise",
+			"qualities": "Szybka,Precyzyjna",
 			"flaws": "",
 			"special": ""
 		},
 		{
 			"id": "Standard Bolt",
 			"name": "Bełt",
-			"description": "<p>Most commonly used bolt without metal head or with head of softer iron.</p>",
+			"description": "<p>Najpowszechniejszy typ bełtów.</p>",
 			"qualities": "",
 			"flaws": "",
 			"special": ""
@@ -537,8 +537,8 @@
 		{
 			"id": "Stiletto",
 			"name": "Stiletto",
-			"description": "<p>Nobleman's Weapon</p>",
-			"qualities": "Impale",
+			"description": "<p>Broń szlachecka</p>",
+			"qualities": "Nadziewająca",
 			"flaws": "",
 			"special": ""
 		},
@@ -546,50 +546,50 @@
 			"id": "Stone Bullet",
 			"name": "Pocisk kamienny",
 			"description": "",
-			"qualities": "Pummel, Sturdy, Recoverable",
+			"qualities": "Ogłuszająca,Solidny,Odzyskiwalny",
 			"flaws": "",
 			"special": ""
 		},
 		{
 			"id": "Trident Dagger",
 			"name": "Sztylet trójzębny",
-			"description": "<p>Nobleman's Weapon</p>",
-			"qualities": "Defensive, Trap Blade",
+			"description": "<p>Broń szlachecka</p>",
+			"qualities": "Parująca,Łamacz mieczy",
 			"flaws": "",
 			"special": ""
 		},
 		{
 			"id": "Ulgu Ingredient",
 			"name": "Składnik Ulgu",
-			"description": "<p>Typowy składnik powszechnie wykorzystywany w splataniu Ulgu.</p><p><em>Cena składnika zależy od zaklęcia, do którego jest przeznaczony. Ustaw cenę na X s, gdzie X jest równe PZ.&nbsp;</em></p>"
+			"description": "<p>Typowy składnik powszechnie wykorzystywany w splataniu Ulgu.</p><p><em>Cena składnika zależy od zaklęcia, do którego jest przeznaczony. Ustaw cenę na X s, gdzie X jest równe PZ.</em></p>"
 		},
 		{
 			"id": "Voulge",
 			"name": "Voulge",
-			"description": "<p>Knightly Weapon</p>",
-			"qualities": "Hack,Impale",
+			"description": "<p>Broń Rycerska</p>",
+			"qualities": "Rąbiąca,Nadziewająca",
 			"flaws": "",
 			"special": ""
 		},
 		{
 			"id": "War Scythe",
 			"name": "Kosa bojowa",
-			"description": "<p>Knightly Weapon</p>",
-			"qualities": "Hack",
+			"description": "<p>Broń Rycerska</p>",
+			"qualities": "Rąbiąca",
 			"flaws": "",
 			"special": ""
 		},
 		{
 			"id": "Witchcraft Ingredient",
 			"name": "Składnik Czarownictwa",
-			"description": "<p><em>Cena składnika zależy od zaklęcia, do którego jest przeznaczony. Ustaw cenę na X p, gdzie X jest równe PZ. </em></p>\n<p><em>Ewentualnie czarownica może poszukać składników na własną rękę, używając Umiejętności Sztuka Przetrwania. Udany Test skutkuje pozyskaniem 1 + PS składników.</em></p>\n<p><strong>Testy Rzucania zaklęć i Splatania Magii z tej Tradycji skutkują automatyczną Manifestacją, chyba że do rzucenia zaklęcia używane są składniki. Za to składnik nie chroni przed późniejszymi Manifestacjami, jeśli takie się pojawią..</strong></p>"
+			"description": "<p><em>Cena składnika zależy od zaklęcia, do którego jest przeznaczony. Ustaw cenę na X p, gdzie X jest równe PZ. </em></p>\n<p><em>Ewentualnie czarownica może poszukać składników na własną rękę, używając Umiejętności Sztuka Przetrwania. Udany Test skutkuje pozyskaniem 1 + PS składników.</em></p>\n<p><strong>Testy Rzucania zaklęć i Splatania Magii z tej Tradycji skutkują automatyczną Manifestacją, chyba że do rzucenia zaklęcia używane są składniki. Za to składnik nie chroni przed późniejszymi Manifestacjami, jeśli takie się pojawią...</strong></p>"
 		},
 		{
 			"id": "Woodcutter's Axe",
 			"name": "Topór leśniczego",
-			"description": "<p>Tool Grade Weapon</p>",
-			"qualities": "Hack, Slow",
-			"flaws": "",
+			"description": "<p>Narzędzia</p>",
+			"qualities": "Rąbiąca",
+			"flaws": "Powolna",
 			"special": ""
 		}
 	]

@@ -37,17 +37,15 @@
 	"FArmoury.Bolt": "Bolzen",
 	"FArmoury.Bullet": "Kugeln",
 
-	"FArmoury.Properties.Slashing.Label": "Schlitzend",
-	"FArmoury.Properties.Recoverable.Label": "Wiederverwendbar",
-	"FArmoury.Properties.Unrecoverable.Label": "Nicht wiederverwendbar",
-	"FArmoury.Properties.Sturdy.Label": "Robust",
-	"FArmoury.Properties.Frail.Label": "Fragil",
-	"FArmoury.Properties.HardToFind.Label": "Schwer zu finden",
+	"PROPERTY.Slashing": "Schlitzend",
+	"PROPERTY.Recoverable": "Wiederverwendbar",
+	"PROPERTY.Unrecoverable": "Nicht wiederverwendbar",
+	"PROPERTY.Sturdy": "Robust",
+	"PROPERTY.Frail": "Fragil",
 
-	"FArmoury.Properties.Slashing.Description": "Eine Hiebwaffe fügt bei erfolgreichen Treffern an Teilen des Körpers, die durch nicht mehr als 1 AP geschützt sind, einen Blutungszustand zu.",
-	"FArmoury.Properties.Recoverable.Description": "Das Geschoss kann wiederverwendet werden, auch wenn seine Munitionsgruppe dies normalerweise nicht erlaubt. <br/><em>(Das Feature muss in den Einstellungen aktiviert werden)</em>",
-	"FArmoury.Properties.Unrecoverable.Description": "Das Projektil wird immer zerstört und kann niemals wiederverwendet werden.",
-	"FArmoury.Properties.Sturdy.Description": "Das Geschoss ist robust und leichter wiederzuverwenden.<br/><b>Prozent Regeln</b>: Zweimal würfeln und den Niedrigeren nehmen<br/><b>Erfolgs-/Misserfolgsregeln</b>: negiert die Erfolgs-/Misserfolgsbedingung<br/><b>Andere Regeln:</b> Wenn nicht wiederverwendbar, mit D100 würfeln.<br/><em>(Das Feature muss in den Einstellungen aktiviert werden)</em>",
-	"FArmoury.Properties.Frail.Description": "Das Geschoss ist sehr zerbrechlich und bricht leicht, was seine Wiederverwendung erschwert.<br/><b>Prozentregeln</b>: Zweimal würfeln und den Höheren nehmen<br/><b>Andere Regeln:</b> Wenn nicht gefunden, wirf D100<br/><em>(Das Feature muss in den Einstellungen aktiviert werden)</em>",
-	"FArmoury.Properties.HardToFind.Description": "Das Projektil ist selbst unter günstigen Bedingungen sehr schwer zu finden. Wenn es wiederverwendet werden soll, würfle erneut mit D100 mit einem Modifikator von -10."
+	"WFRP4E.Properties.Slashing": "Eine Hiebwaffe fügt bei erfolgreichen Treffern an Teilen des Körpers, die durch nicht mehr als 1 AP geschützt sind, einen Blutungszustand zu.",
+	"WFRP4E.Properties.Recoverable": "Das Geschoss kann wiederverwendet werden, auch wenn seine Munitionsgruppe dies normalerweise nicht erlaubt. <br/><em>(Das Feature muss in den Einstellungen aktiviert werden)</em>",
+	"WFRP4E.Properties.Unrecoverable": "Das Projektil wird immer zerstört und kann niemals wiederverwendet werden.",
+	"WFRP4E.Properties.Sturdy": "Das Geschoss ist robust und leichter wiederzuverwenden.<br/><b>Prozent Regeln</b>: Zweimal würfeln und den Niedrigeren nehmen<br/><b>Erfolgs-/Misserfolgsregeln</b>: negiert die Erfolgs-/Misserfolgsbedingung<br/><b>Andere Regeln:</b> Wenn nicht wiederverwendbar, mit D100 würfeln.<br/><em>(Das Feature muss in den Einstellungen aktiviert werden)</em>",
+	"WFRP4E.Properties.Frail": "Das Geschoss ist sehr zerbrechlich und bricht leicht, was seine Wiederverwendung erschwert.<br/><b>Prozentregeln</b>: Zweimal würfeln und den Höheren nehmen<br/><b>Andere Regeln:</b> Wenn nicht gefunden, wirf D100<br/><em>(Das Feature muss in den Einstellungen aktiviert werden)</em>"
 }
