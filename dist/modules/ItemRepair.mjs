@@ -197,6 +197,7 @@ export default class ItemRepair {
     let locations = [];
     let totalDamage = 0;
     let totalMaxDamage = 0;
+    let repairCostInD = 0;
     let price = this.#getPriceInD(item) * 0.1;
 
     for (let i in locationKeys) {
@@ -209,9 +210,10 @@ export default class ItemRepair {
 
       if (AP > 0 && damage > 0) {
         let damageToPayFor = damage;
-        if (damage >= AP + durable)
+        if (damage >= maxDamage)
           damageToPayFor += 1;
 
+        repairCostInD += price * damageToPayFor;
         let locationLabel = game.i18n.localize(`WFRP4E.Locations.${location}`);
         let localRepairCost = this.#getMoneyStringFromD(price * damageToPayFor, paid);
         locations.push({
@@ -225,7 +227,7 @@ export default class ItemRepair {
       }
     }
     let singleRepairCost = this.#getMoneyStringFromD(price, paid)
-    let repairCost = this.#getMoneyStringFromD(price * totalDamage, paid)
+    let repairCost = this.#getMoneyStringFromD(repairCostInD, paid)
 
     return {
       uuid: item.uuid,
@@ -245,18 +247,22 @@ export default class ItemRepair {
   /**
    * @param {ItemWfrp4e[]} items
    * @param {boolean} paid
+   * @param {String} subtype
    */
-  processWeapons(items = [], paid) {
-    return this.processTrappings(items, paid);
+  processWeapons(items = [], {paid = true, subtype = null} = {}) {
+    return this.processTrappings(items, {paid, subtype});
   }
 
   /**
    * @param {ItemWfrp4e[]} items
    * @param {boolean} paid
+   * @param {String} subtype
    */
-  processTrappings(items = [], paid) {
+  processTrappings(items = [], {paid = true, subtype = null} = {}) {
     let damagedItems = [];
     items.forEach(item => {
+      if (subtype && (!subtype.includes(item.system.weaponGroup?.value) || subtype.includes(item.system.trappingType?.value)))
+        return;
       let damagedItem = this.checkTrappingDamage(item, paid);
       if (damagedItem?.damaged)
         damagedItems.push(damagedItem);
@@ -268,10 +274,13 @@ export default class ItemRepair {
   /**
    * @param {ItemWfrp4e[]} items
    * @param {boolean} paid
+   * @param {String} subtype
    */
-  processArmour(items = [], paid) {
+  processArmour(items = [], {paid = true, subtype = null} = {}) {
     let damagedItems = [];
     items.forEach(item => {
+      if (subtype && !subtype.includes(item.system.armorType.value))
+        return;
       let damagedItem = this.checkArmourDamage(item, paid);
       if (damagedItem?.damaged)
         damagedItems.push(damagedItem);
@@ -284,29 +293,60 @@ export default class ItemRepair {
    * @param {ActorWfrp4e} actor
    * @param {boolean} paid
    * @param {String} chatMessageId
+   * @param {String} type
+   * @param {String} subtype
+   * @param {String} userId
    */
-  async checkInventoryForDamage(actor, {paid = true, chatMessageId = null} = {}) {
-    let templateData = {};
-    templateData.armour = this.processArmour(actor.itemCategories.armour, paid);
-    templateData.weapons = this.processWeapons(actor.itemCategories.weapon, paid);
-    templateData.trappings = this.processTrappings(actor.itemCategories.trapping, paid);
-    templateData.paid = paid;
+  async checkInventoryForDamage(actor, {
+    paid = true,
+    chatMessageId = null,
+    type = null,
+    subtype = null,
+    user = null
+  } = {}) {
+    if (!actor || !(actor instanceof ActorWfrp4e)) {
+      return Utility.notify(game.i18n.localize('Forien.Armoury.ItemRepair.NoActorSelected'), {type:'warning'});
+    }
 
-    let html = await renderTemplate(Utility.getTemplate(this.templates.chatMessage), templateData);
     let chatMessage;
     let content;
+    let templateData = {
+      armour: [],
+      weapons: [],
+      trappings: [],
+      paid: paid,
+      empty: false
+    };
+    if (chatMessageId) {
+      chatMessage = await fromUuid(chatMessageId);
+      type = chatMessage.getFlag('forien-armoury', 'type');
+      subtype = chatMessage.getFlag('forien-armoury', 'subtype');
+    }
+
+    if (type.includes('armour'))
+      templateData.armour = this.processArmour(actor.itemCategories.armour, {paid, subtype});
+    if (type.includes('weapons'))
+      templateData.weapons = this.processWeapons(actor.itemCategories.weapon, {paid, subtype});
+    if (type.includes('trappings'))
+      templateData.trappings = this.processTrappings(actor.itemCategories.trapping, {paid, subtype});
+
+    if (templateData.armour.length === 0 && templateData.weapons.length === 0 && templateData.trappings.length === 0)
+      templateData.empty = true;
+
+    let html = await renderTemplate(Utility.getTemplate(this.templates.chatMessage), templateData);
 
     if (!chatMessageId) {
       let chatData = {
-        user: game.user,
+        user: user ?? game.user,
         speaker: {alias: actor.name, actor: actor._id},
         whisper: game.users.filter((u) => u.isGM).map((u) => u._id),
         content: html
       };
       chatMessage = await ChatMessage.create(chatData)
+      await chatMessage.setFlag('forien-armoury', 'type', type);
+      await chatMessage.setFlag('forien-armoury', 'subtype', subtype);
       content = chatMessage.content;
     } else {
-      chatMessage = await fromUuid(chatMessageId);
       content = html;
     }
 
