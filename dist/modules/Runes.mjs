@@ -38,14 +38,14 @@ export default class TemporaryRunes {
     /**
      * @type {ActorWfrp4e|null}
      */
-    await actor.deleteEmbeddedDocuments("ActiveEffect", [effect._id]);
+    //await actor.deleteEmbeddedDocuments("ActiveEffect", [effect._id]);
     /**
      * @type {ItemWfrp4e|null}
      */
     let item = await fromUuid(itemUuid);
     let itemEffect = item.effects.find(e => e.name === effect.name);
 
-    await item.deleteEmbeddedDocuments("ActiveEffect", [itemEffect._id]);
+    //await item.deleteEmbeddedDocuments("ActiveEffect", [itemEffect._id]);
 
     let itemDamaged = ``;
     if (game.settings.get('forien-armoury', 'runes.damageEnable')) {

@@ -45,7 +45,7 @@
           "Temporary": "tymczasowa"
         },
 
-        "RemovedEffectTemporaryRuneDisabled": "Usunięto efekt \"{effectName}\" z Aktora \"{actorName}\" oraz Przedmiotu \"${itemName}\". To była tymczasowa Runa, która wygasła. {itemDamaged}",
+        "RemovedEffectTemporaryRuneDisabled": "Usunięto efekt \"{effectName}\" z Aktora \"{actorName}\" oraz Przedmiotu \"{itemName}\". To była tymczasowa Runa, która wygasła.",
         "Weapon": "Broń",
         "Item": "Przedmiot",
         "Received1Damage": "Otrzymano 1 Punkt Uszkodzeń",
