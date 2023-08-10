@@ -1,6 +1,15 @@
 # Changelog
 
 ## v1.X.X
+### v1.1.5
+* Fixed the "Percentage" modes for Ammo Reclamation not working properly
+### v1.1.4
+* Fixed serious bug that would delete all RollTables on Re-Importing the Item Piles Integration instead of only RollTables in one specific folder
+### v1.1.3
+* Fixed Repair Item feature not working without specified Type and Subtype
+### v1.1.2
+* Introduced various Price Tables by Nibbler
+
 ### v1.1.0
 * Fixed some duplicated IDs from WFRP4e Core module (for example Potion Bag was overriding Sling Bag) (Issue #35)
 * Fixed "Check Equipment for Repairs" macro that would not allow repairing damaged Armour if Armour only had 1 AP 

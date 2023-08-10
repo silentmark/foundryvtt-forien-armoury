@@ -323,11 +323,11 @@ export default class ItemRepair {
       subtype = chatMessage.getFlag('forien-armoury', 'subtype');
     }
 
-    if (type.includes('armour'))
+    if (!type || type.includes('armour'))
       templateData.armour = this.processArmour(actor.itemCategories.armour, {paid, subtype});
-    if (type.includes('weapons'))
+    if (!type || type.includes('weapons'))
       templateData.weapons = this.processWeapons(actor.itemCategories.weapon, {paid, subtype});
-    if (type.includes('trappings'))
+    if (!type || type.includes('trappings'))
       templateData.trappings = this.processTrappings(actor.itemCategories.trapping, {paid, subtype});
 
     if (templateData.armour.length === 0 && templateData.weapons.length === 0 && templateData.trappings.length === 0)
