@@ -1,158 +1,158 @@
 {
   "id": "forien-armoury",
   "title": "Forien's Armoury [WFRP4]",
-  "version": "<<autoreplaced>>",
-  "url": "<<autoreplaced>>",
-  "manifest": "<<autoreplaced>>",
-  "download": "<<autoreplaced>>",
-  "readme": "<<autoreplaced>>",
-  "changelog": "<<autoreplaced>>",
-  "bugs": "<<autoreplaced>>",
+  "version": "1.1.5",
+  "url": "https://github.com/Forien/foundryvtt-forien-armoury",
+  "manifest": "https://github.com/Forien/foundryvtt-forien-armoury/releases/latest/download/module.json",
+  "download": "https://github.com/Forien/foundryvtt-forien-armoury/releases/download/v1.1.5/module.zip",
+  "readme": "https://github.com/Forien/foundryvtt-forien-armoury/blob/v1.1.5/README.md",
+  "changelog": "https://github.com/Forien/foundryvtt-forien-armoury/blob/v1.1.5/CHANGELOG.md",
+  "bugs": "https://github.com/Forien/foundryvtt-forien-armoury/issues",
   "description": "A collection of custom trappings and features for Warhammer Fantasy Role-Play 4th edition game system for Foundry Virtual Table Top\n\nForien's Armoury started as a compendium of my own custom items and houserules and as the time went by, it got expanded.",
   "authors": [
-    {
-      "name": "Forien",
-      "discord": "forien",
-      "email": "mr.forien@gmail.com",
-      "url": "https://www.patreon.com/foundryworkshop"
-    }
+      {
+          "name": "Forien",
+          "discord": "forien",
+          "email": "mr.forien@gmail.com",
+          "url": "https://www.patreon.com/foundryworkshop"
+      }
   ],
   "compatibility": {
-    "minimum": "11",
-    "verified": "11"
+      "minimum": "11",
+      "verified": "11"
   },
   "relationships": {
-    "systems": [
-      {
-        "id": "wfrp4e",
-        "type": "system"
-      }
-    ],
-    "recommends": [
-      {
-        "id": "ATL",
-        "type": "module"
-      },
-      {
-        "id": "item-piles",
-        "type": "module"
-      },
-      {
-        "id": "times-up",
-        "type": "module"
-      }
-    ]
+      "systems": [
+          {
+              "id": "wfrp4e",
+              "type": "system"
+          }
+      ],
+      "recommends": [
+          {
+              "id": "ATL",
+              "type": "module"
+          },
+          {
+              "id": "item-piles",
+              "type": "module"
+          },
+          {
+              "id": "times-up",
+              "type": "module"
+          }
+      ]
   },
   "packs": [
-    {
-      "label": "Forien's Armoury",
-      "name": "forien-armoury",
-      "path": "packs/forien-armoury",
-      "type": "Item",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
+      {
+          "label": "Forien's Armoury",
+          "name": "forien-armoury",
+          "path": "packs/forien-armoury",
+          "type": "Item",
+          "ownership": {
+              "PLAYER": "OBSERVER",
+              "ASSISTANT": "OWNER"
+          },
+          "system": "wfrp4e"
       },
-      "system": "wfrp4e"
-    },
-    {
-      "label": "Forien's Homerules",
-      "name": "forien-homerules",
-      "type": "JournalEntry",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
+      {
+          "label": "Forien's Homerules",
+          "name": "forien-homerules",
+          "type": "JournalEntry",
+          "ownership": {
+              "PLAYER": "OBSERVER",
+              "ASSISTANT": "OWNER"
+          },
+          "system": "wfrp4e",
+          "path": "packs/forien-homerules"
       },
-      "system": "wfrp4e",
-      "path": "packs/forien-homerules"
-    },
-    {
-      "label": "Macros (Forien's Armoury)",
-      "name": "macros",
-      "path": "packs/macros",
-      "type": "Macro",
-      "ownership": {
-        "PLAYER": "OBSERVER",
-        "ASSISTANT": "OWNER"
+      {
+          "label": "Macros (Forien's Armoury)",
+          "name": "macros",
+          "path": "packs/macros",
+          "type": "Macro",
+          "ownership": {
+              "PLAYER": "OBSERVER",
+              "ASSISTANT": "OWNER"
+          },
+          "system": "wfrp4e"
       },
-      "system": "wfrp4e"
-    },
-    {
-      "name": "merchant-rolltables",
-      "label": "Merchant Rolltables (Forien's Armoury)",
-      "path": "packs/merchant-rolltables",
-      "type": "RollTable",
-      "ownership": {
-        "PLAYER": "NONE",
-        "ASSISTANT": "OWNER"
+      {
+          "name": "merchant-rolltables",
+          "label": "Merchant Rolltables (Forien's Armoury)",
+          "path": "packs/merchant-rolltables",
+          "type": "RollTable",
+          "ownership": {
+              "PLAYER": "NONE",
+              "ASSISTANT": "OWNER"
+          },
+          "system": "wfrp4e"
       },
-      "system": "wfrp4e"
-    },
-    {
-      "name": "merchants",
-      "label": "Merchants (Forien's Armoury)",
-      "path": "packs/merchants",
-      "type": "Actor",
-      "ownership": {
-        "PLAYER": "NONE",
-        "ASSISTANT": "OWNER"
-      },
-      "system": "wfrp4e"
-    }
+      {
+          "name": "merchants",
+          "label": "Merchants (Forien's Armoury)",
+          "path": "packs/merchants",
+          "type": "Actor",
+          "ownership": {
+              "PLAYER": "NONE",
+              "ASSISTANT": "OWNER"
+          },
+          "system": "wfrp4e"
+      }
   ],
   "packFolders": [
-    {
-      "name": "Forien's Armoury",
-      "sorting": "a",
-      "packs": [
-        "forien-armoury",
-        "macros",
-        "forien-homerules"
-      ],
-      "folders": [
-        {
-          "name": "Integrations",
+      {
+          "name": "Forien's Armoury",
           "sorting": "a",
           "packs": [
-            "merchant-rolltables",
-            "merchants"
+              "forien-armoury",
+              "macros",
+              "forien-homerules"
+          ],
+          "folders": [
+              {
+                  "name": "Integrations",
+                  "sorting": "a",
+                  "packs": [
+                      "merchant-rolltables",
+                      "merchants"
+                  ]
+              }
           ]
-        }
-      ]
-    }
+      }
   ],
   "esmodules": [
-    "modules/forien-armoury.mjs"
+      "modules/forien-armoury.mjs"
   ],
   "styles": [
-    "styles/forien-armoury.css"
+      "styles/forien-armoury.css"
   ],
   "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "languages/en.json"
-    },
-    {
-      "lang": "pl",
-      "name": "Polski",
-      "path": "languages/pl.json"
-    }
+      {
+          "lang": "en",
+          "name": "English",
+          "path": "languages/en.json"
+      },
+      {
+          "lang": "pl",
+          "name": "Polski",
+          "path": "languages/pl.json"
+      }
   ],
   "flags": {
-    "hotReload": {
-      "extensions": [
-        "css",
-        "html",
-        "hbs",
-        "json"
-      ],
-      "paths": [
-        "templates/",
-        "styles/",
-        "languages/"
-      ]
-    }
+      "hotReload": {
+          "extensions": [
+              "css",
+              "html",
+              "hbs",
+              "json"
+          ],
+          "paths": [
+              "templates/",
+              "styles/",
+              "languages/"
+          ]
+      }
   },
   "socket": true
 }
