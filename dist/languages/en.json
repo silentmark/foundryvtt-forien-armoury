@@ -2,12 +2,27 @@
   "Forien": {
     "Armoury": {
       "Macros": {
-        "MustControlActor": "Must control the character you want to generate ingredients for.",
+        "MustControlActor": "Must control the character you want to use this macro for.",
+        "AvailableSkills": "Select skill to roll with limited results",
         "SelectSpell": "Select spell to create ingredient",
         "Generate": "Generate",
         "Cancel": "Cancel",
+        "Roll": "Roll",
         "IngredientFor": "Ingredient for",
         "AvailableSpells": "Available spells"
+      },
+
+      "CombatFatigue": {
+        "CombatFatigueTest": " — Combat Fatigue"
+      },
+
+      "CastingFatigue": {
+        "MagicalEnduranceTest": " — Casting Fatigue",
+        "TestFailure": "{character} received <b>1 Fatigued</b> Condition.",
+        "TestSuccess": "{character} staved off Fatigue for now…",
+        "MagicalEndurance": "Magical Endurance",
+        "Regen": "Regeneration",
+        "PerHourShort": "/ hr"
       },
 
       "ItemRepair": {
@@ -168,19 +183,48 @@
         "Bolt": "Bolt",
         "Bullet": "Bullet",
 
-        "Properties.Slashing.Label": "Slashing",
-        "Properties.Recoverable.Label": "Recoverable",
-        "Properties.Unrecoverable.Label": "Unrecoverable",
-        "Properties.Sturdy.Label": "Sturdy",
-        "Properties.Frail.Label": "Frail",
-        "Properties.HardToFind.Label": "Hard To Find",
-
-        "Properties.Slashing.Description": "A  Slashing  weapon  inflicts  one  Bleeding  Condition  on successful hits on locations protected by no more than 1 Armour Point.",
-        "Properties.Recoverable.Description": "Projectile can be recovered even if it's ammunition group normally cannot. <br/><em>(requires feature enabled in settings)</em>",
-        "Properties.Unrecoverable.Description": "Projectile always perishes and can never be recovered.",
-        "Properties.Sturdy.Description": "Projectile is sturdy and easier to recover.<br/><b>Percentage rules</b>: rolls double, picks lower<br/><b>Success/Fail rules</b>: negates success/failure condition<br/><b>Other rules:</b> if not recovered, roll for Percentage.<br/><em>(requires feature enabled in settings)</em>",
-        "Properties.Frail.Description": "Projectile is very frail and easily breaks making it harder to recover.<br/><b>Percentage rules</b>: rolls double, picks higher<br/><b>Other rules:</b> if not recovered, roll for Percentage<br/><em>(requires feature enabled in settings)</em>",
-        "Properties.HardToFind.Description": "Projectile is very hard to find even in favorable conditions. If it was to be recovered, roll again for Percentage with –10 modifier."
+        "Properties": {
+          "Blinding": {
+            "Label": "Blinding",
+            "Description": "A Blinding X weapon inflicts X @Condition[Blinded] Conditions to enemy hit.",
+            "Message": "Blinding weapon was used! <strong>{rating} Blinded Conditions received.</strong>"
+          },
+          "Incendiary": {
+            "Label": "Incendiary",
+            "Description": "An Incendiary X weapon inflicts one @Condition[Ablaze] Condition on hit, as long as unit die on the Weapon Test rolled less than or equal X.",
+            "Message": "Incendiary weapon was used and unit die ({die}) rolled less than or equal {rating}! <strong>Ablaze Condition received.</strong>"
+          },
+          "Slashing": {
+            "Label": "Slashing",
+            "Description": "A weapon with Slashing X inflicts one @Condition[Bleeding] Condition on a successful hits on locations protected by no more than X Armour Points.",
+            "Message": "{location} is protected by only {ap} Armour Points, not enough to protect against Slashing {rating}. <strong>Bleeding Condition received.</strong>"
+          },
+          "Poisonous": {
+            "Label": "Poisonous",
+            "Description": "A weapon with Poisonous X inflicts one @Condition[Poisoned] Condition whenever attacker scores at least X SL on Weapon Test.",
+            "Message": "Attacker's Weapon Test scored {sl} SL, which is greater than or equal to Poisonous rating ({rating}). <strong>Poisoned Condition received.</strong>"
+          },
+          "Recoverable": {
+            "Label": "Recoverable",
+            "Description": "Projectile can be recovered even if it's ammunition group normally cannot. <br/><em>(requires feature enabled in settings)</em>"
+          },
+          "Unrecoverable": {
+            "Label": "Unrecoverable",
+            "Description": "Projectile always perishes and can never be recovered."
+          },
+          "Sturdy": {
+            "Label": "Sturdy",
+            "Description": "Projectile is sturdy and easier to recover.<br/><b>Percentage rules</b>: rolls double, picks lower<br/><b>Success/Fail rules</b>: negates success/failure condition<br/><b>Other rules:</b> if not recovered, roll for Percentage.<br/><em>(requires feature enabled in settings)</em>"
+          },
+          "Frail": {
+            "Label": "Frail",
+            "Description": "Projectile is very frail and easily breaks making it harder to recover.<br/><b>Percentage rules</b>: rolls double, picks higher<br/><b>Other rules:</b> if not recovered, roll for Percentage<br/><em>(requires feature enabled in settings)</em>"
+          },
+          "HardToFind": {
+            "Label": "Hard To Find",
+            "Description": "Projectile is very hard to find even in favorable conditions. If it was to be recovered, roll again for Percentage with –10 modifier."
+          }
+        }
       },
 
       "CheckCareer": {
@@ -206,10 +250,111 @@
         "ConclusionPotential": "You have „potential“ skills and/or talents, talk to your GM. They might count towards your career!"
       },
 
+      "Effects": {
+        "SelectTalent": "Select Talent to add",
+        "AddTalent": "Add Talent",
+        "NotEnoughAdvances": "You do not have enough advances to run the \"{effect}\" effect! You have {advances}, but the effect requires {required}.",
+
+        "Steelstorm": {
+          "Assault": {
+            "Name": "Steelstorm Assault",
+            "Description": "{character} spends 2 Advantage to perform a Bonus Action with any Initiative value"
+          },
+          "AllIn": {
+            "Name": "Going All In",
+            "Description": "{character} goes <b>All In</b>, gaining +20 modifier to all attacks until the start of their next turn. However, during this time, all attackes aimed at this character will be <b>Unopposed</b>.",
+            "Mastery": "Because of Mastery, non-Damaging weapons become Damaging, while Damaging weapons become Impact instead"
+          }
+        },
+
+        "Ironshield": {
+          "Bracing": {
+            "Name": "Bracing",
+            "Description": "{character} is <b>Bracing</b> against incoming attacks, gaining +20 modifier to all defensive Weapon Tests. <br/>While Bracing, character can only move using their Walk speed and they are unable to perform any Actions (Free Actions are up to GM). <br/>Bracing ends the moment character initiates an Attack."
+          },
+          "Riposte": {
+            "Name": "Ironshield Riposte",
+            "Description": "{character} may spend 2 Advantage. If they do, they can immediately attack their attacker as a Free Action. This attack does not end Brace.",
+            "Mastery": "Additionally, thanks to Mastery, Ironshield Riposte can receive one of the following effects: Cause 1 @Condition[Bleeding], perform a \"Strike to Stun\" with your shield, or give –10 modifier to defend against the riposte."
+          }
+        },
+
+        "Evadecraft": {
+          "Disengage": {
+            "Name": "Shrewd Disengage",
+            "Description": "{character} may, once per Encounter, safely Disengage without spending Advantage."
+          },
+          "LuckyEvadecraft": {
+            "Name": "Lucky Evadecraft",
+            "Description": "Attacker scored a critical hit! {character} may spend a Fortune Point to force the Attacker to reroll their attack."
+          },
+          "ShrewdTrickery": {
+            "Name": "Shrewd Trickery",
+            "Description": "{character} can perform <b>Trick</b> ability with +10 modifier. Winning by 4 SL or more will award 2 Advantage instead of 1."
+          },
+          "Mastery": {
+            "NoTarget": "You need to target a token in order to Learn Moves!",
+            "AlreadyLearned": "You already learned moves from this opponent!",
+            "LearnedMoves": "Learned Moves",
+            "LearnedMovesDescription": "{character} spent their entire Action, studying their opponent's movement. Until the end of this Encounter, gain +10 modifier to all Weapon and Dodge Tests to attack or defend against this opponent."
+          }
+        }
+      },
+
+      "WorldTimeObserver": {
+        "NotAFunction": "Passed `callable` argument is not a Function",
+        "NotAnInteger": "Passed `{arg}` argument is not an Integer, or is of invalid value",
+        "NotAnObject": "Passed `args` argument is not an Object",
+        "LoopError": "Somehow, impossible happened. ID generating loop hit an upper limit of attempts. Check console (F12) for details.",
+        "CallbackError": "There was an Error when executing a Callback. Check the console (F12) for details."
+      },
+
+      "Symptoms": {
+        "Vertigo": {
+          "Name": "Vertigo",
+          "Description": "You have trouble staying balanced and feel the sensation of spinning around. All <b>Weapon Tests</b>, as well as Tests based on either <b>Agility</b>, <b>Dexterity</b>, or <b>Intelligence</b> suffer a penalty of <b>–2 SL</b> while you are dizzy.",
+          "Treatment": "There is no treatment available for Vertigo, this symptom ends when the cause of it ends."
+        },
+        "Scarring": {
+          "Name": "Scarring",
+          "Description": "You have been horribly scarred by your ordeal and your appearance unsettles or disgusts other. As a result you suffer a <b>–10</b> penalty to all <b>Fellowship Tests</b>.",
+          "Treatment": "Scarring is usually permanent barring special magic."
+        },
+        "Rashes": {
+          "Name": "Rashes",
+          "Description": "You have a number of red, itchy rashes. As a result your appearance is slightly marred and you lose some of your deftness as you scratch and squirm. Receive a <b>–5 modifier</b> to your <b>Dexterity</b> and <b>Fellowship</b> Characteristics.",
+          "Treatment": "Depending on the disease some herbs and alchemical mixes can alleviate rashes. Of course there are also many fake remedies available for sale that do nothing and a purchased treatment has a 10% chance of being snake-oil. Treatments cost from 10 brass pennies and upwards depending on the status of the purchaser and the reputation of the seller. Anyone with <b>Trade (Apothecary)</b> or <b>Trade (Alchemist)</b> with access to appropriate ingredients (costing 5 pennies) can create enough salve that when applied daily can alleviate the symptoms for a week."
+        },
+        "Taint": {
+          "Name": "Taint",
+          "Description": "This disease is tainted by the powers of Chaos and affects the very soul of the suffering victim. Unless the victim passes a <b>Challenging (+0) Endurance Test</b>, they suffer 1 point of @UUID[JournalEntry.NS3YGlJQxwTggjRX.JournalEntryPage.115GzWrmkD4viyy5]{Corruption}.",
+          "Treatment": "There is no treatment for the Taint.",
+          "Failure": "{character} gains 1 point of Corruption"
+        }
+      },
+
       "Settings": {
+        "MenuName": "Access Armoury's Settings",
+        "MenuLabel": "Settings",
+        "MenuHint": "Open dedicated window which will show all settings divided in intuitive tabs",
+
+        "Tabs": {
+          "Main": "Miscellaneous",
+          "ArrowReclamation": "Arrow Reclamation",
+          "CombatFatigue": "Combat Fatigue",
+          "CastingFatigue": "Casting Fatigue",
+          "Integrations": "Integrations"
+        },
+
         "Runes": {
           "Enable": "Item damage from Runes",
           "EnableHint": "If enabled, Items will get damaged when a Temporary Rune engraved on them is disabled/used."
+        },
+
+        "Diseases": {
+          "AutoProgress": "Automated Disease Progression",
+          "AutoProgressHint": "If checked, module will progress Actors' diseases automatically (Requires a time tracking module. <a href=\"https://foundryvtt.com/packages/foundryvtt-simple-calendar\" target=\"_blank\"><b>Simple Calendar</b></a> is recommended).",
+          "AutoProgressNoWorldTime": "WorldTime hasn't been set. Please activate and configure a time tracking module (for example, Simple Calendar) before enabling Automated Disease Progression."
         },
 
         "ArrowReclamation": {
@@ -239,6 +384,33 @@
           "PercentageHint": "Set target percentage for rolling with certain Rules. Roll will succeed if d100 rolls less or equal to Target"
         },
 
+        "CombatFatigue": {
+          "Enable": "Enable Combat Fatigue",
+          "EnableHint": "When enabled, combatants will have to pass Endurance Test after TB rounds, or gain Fatigue",
+          "EnableNPC": "NPC Combat Fatigue",
+          "EnableNPCHint": "Should NPCs follow the rules of Combat Fatigue (if enabled)?"
+        },
+
+        "CastingFatigue": {
+          "FortifiedMindTalent": "Fortified Mind",
+          "Enable": "Enable Casting Fatigue",
+          "EnableHint": "Should Casting Fatigue feature be enabled?",
+          "CostOfChanneling": "Cost of Channeling",
+          "CostOfChannelingHint": "How much ME is spent when attempting Channeling?",
+          "NegativeMEPerStep": "Difficulty Step",
+          "NegativeMEPerStepHint": "For every negative X, the difficulty of Endurance Test will increase. So a value of 5 will mean that Test becomes difficult on -5, hard on -10 etc.",
+          "UseBaseCN": "Use base CN?",
+          "UseBaseCNHint": "If checked, ME spent will be equal to spell's base CN. Otherwise, \"effective CN\" will be used (reduced by Channeling SL)",
+          "MaxME": "Maximum ME formula",
+          "MaxMEHint": "How should maximum amount of Magical Endurance be calculated for a character?",
+          "TBtimesWPB": "Toughness Bonus × Willpower Bonus",
+          "TBplusWPB": "Toughness Bonus + Willpower Bonus",
+          "TBplus2WPB": "Toughness Bonus + 2 × Willpower Bonus",
+          "AutoRegen": "Automate Regeneration?",
+          "AutoRegenHint": "If checked, module will regenerate Actors' ME automatically (Requires a time tracking module. <a href=\"https://foundryvtt.com/packages/foundryvtt-simple-calendar\" target=\"_blank\"><b>Simple Calendar</b></a> is recommended).",
+          "AutoRegenNoWorldTime": "WorldTime hasn't been set. Please activate and configure a time tracking module (for example, Simple Calendar) before enabling Automated Regeneration."
+        },
+
         "ATL": {
           "ResetPresets": "Reset ATL Presets",
           "ResetPresetsHint": "When checked, this module will set ATL presets to be more in line with WFRP rules and to work with Light items from Forien's Armoury Compendium"
@@ -249,7 +421,26 @@
           "SetCurrenciesHint": "When checked, this module will set Item Pile's currencies to use all of custom coins provided with Forien's Armoury. However, it is not suggested to use all 10 coins together as default.",
           "RolltablesImport": "Re-Import RollTables",
           "RolltablesImportHint": "When checked, system will reimport all Merchant RollTables for Item Piles integration. WARNING: this will purge all contents of \"Merchant Rolltables\" folder!"
+        },
+
+        "Promo": {
+          "Promo1": "Hello! I'm Forien, an author of this module. Please accept my thanks for installing and using my Armoury, it means a lot to me. I hope you are enjoying all the features and content this module provides and that it enhances your game!",
+          "Promo2": "If you have any suggestions or request, feel free to contact me on Discord, or drop an \"Issue\" on GitHub. You can find links below.",
+          "Promo3": "If you enjoy this module and would like to support its development, please consider becoming a Patreon supporter, or tipping via Ko-Fi.",
+          "ModuleOn": "Module on",
+          "FVTTWebsite": "Foundry VTT website",
+          "ProjectOn": "Project on",
+          "Github": "GitHub",
+          "CheckOtherModules": "Check my other modules on",
+          "MyFVTTProfile": "my Foundry VTT profile"
         }
+      }
+    },
+
+    "Settings": {
+      "Debug": {
+        "Enable": "Debug",
+        "EnableHint": "Enable console debug outputs (client side)"
       }
     }
   }

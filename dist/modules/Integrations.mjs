@@ -1,22 +1,27 @@
 import ItemPiles from "./module-integrations/ItemPiles.mjs";
 import ATL from "./module-integrations/ATL.mjs";
+import ForienBaseModule from "./utility/ForienBaseModule.mjs";
 
-export default class Integrations {
+export default class Integrations extends ForienBaseModule {
   /**
-   * @type ItemPiles
+   * @type {ItemPiles}
    */
   itemPiles;
   /**
-   * @type ATL
+   * @type {ATL}
    */
-  ATL;
+  atl;
 
   constructor() {
+    let superReturn = super();
+
     if (game.modules.get("item-piles")?.active)
       this.itemPiles = new ItemPiles();
 
     if (game.modules.get("ATL")?.active)
-      this.ATL = new ATL();
+      this.atl = new ATL();
+
+    return superReturn;
   }
 
 
@@ -31,11 +36,11 @@ export default class Integrations {
    * Register Settings for module integration
    */
   registerSettings() {
-    this.ATL?.registerSettings();
+    this.atl?.registerSettings();
     this.itemPiles?.registerSettings();
   }
 
-  ready() {
+  onReady() {
     this.itemPiles?.initialize();
   }
 

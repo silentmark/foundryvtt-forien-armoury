@@ -12,21 +12,24 @@
     "gTCyZ0artUI2MCgz",
     "9XxeTpJTh6hE9guG",
     "1KixRsjyMULqAzSZ",
-    "aQ7pHrVuoyA5r3m6"
+    "aQ7pHrVuoyA5r3m6",
+    "LnfVke9w0gwL3Qle",
+    "TyuySXT65wdeXpHJ",
+    "3f9WadqrJ4ovFtQ2"
   ],
   "flags": {
     "core": {}
   },
   "_stats": {
     "systemId": "wfrp4e",
-    "systemVersion": "6.6.0",
-    "coreVersion": "11.306",
+    "systemVersion": "7.0.3",
+    "coreVersion": "11.315",
     "createdTime": 1687714479307,
-    "modifiedTime": 1691052407776,
-    "lastModifiedBy": "ZJyAmf2sKocHG1ud"
+    "modifiedTime": 1702857859812,
+    "lastModifiedBy": "XoHsMevsFtsW7WqO"
   },
   "_id": "u2f4n9KXYBmBvZw3",
-  "sort": 200000,
+  "sort": 400000,
   "ownership": {
     "default": 0,
     "aDepqlKkeOa13DWo": 3

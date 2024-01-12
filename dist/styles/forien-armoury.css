@@ -1,3 +1,8 @@
+.forien-armoury {
+  /**
+   * Select Item Dialog
+   */
+}
 .forien-armoury .forien-armoury-hr {
   border-bottom: 1px solid var(--color-border-light-highlight);
 }
@@ -81,6 +86,200 @@
 }
 .forien-armoury .item-repair-entry:last-of-type::after {
   display: none;
+}
+.forien-armoury.select-item input {
+  display: none;
+}
+.forien-armoury.select-item label {
+  border: #bba022 solid 2px;
+  margin: 2px 5px;
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: 1fr;
+  gap: 0 0;
+  grid-template-areas: ". .";
+}
+.forien-armoury.select-item label .image {
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+.forien-armoury.select-item label .name {
+  display: block;
+  align-self: center;
+  margin-left: 10px;
+}
+.forien-armoury.select-item input:checked + label {
+  font-weight: bold;
+  box-shadow: 0 0 20px 0 #b79756, inset 0 0 20px 0 #b79756;
+}
+.forien-armoury.magical-endurance-header {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 6px;
+  height: 25px;
+}
+.forien-armoury.magical-endurance-header .magical-endurance-box {
+  display: flex;
+  flex-direction: row;
+  margin-right: 6px;
+  flex: 4;
+}
+.forien-armoury.magical-endurance-header .magical-endurance-box:last-of-type {
+  margin-right: 0;
+}
+.forien-armoury.magical-endurance-header .magical-endurance-box .label {
+  font-family: CaslonAntique, serif;
+  font-weight: 700;
+  font-size: var(--font-size-16);
+  color: rgba(70, 67, 49, 0.768627451);
+  text-align: center;
+  border: 1px solid rgba(115, 105, 83, 0.6509803922);
+  margin: 0;
+  height: inherit;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3215686275) inset;
+  padding: 3px 0 0;
+  width: 70px;
+  flex: 3;
+}
+.forien-armoury.magical-endurance-header .magical-endurance-box .label.unit {
+  flex: 1;
+}
+.forien-armoury.magical-endurance-header .magical-endurance-box .label.divide {
+  box-shadow: none;
+  border-left: none;
+  border-right: none;
+  flex: 0;
+}
+.forien-armoury.magical-endurance-header .magical-endurance-box .label.value {
+  box-shadow: none;
+  border-left: none;
+  flex: 1;
+  color: #222;
+  font-weight: 500;
+}
+.forien-armoury.magical-endurance-header .magical-endurance-box .input {
+  text-align: center;
+  border: 1px solid rgba(115, 105, 83, 0.6509803922);
+  border-left: none;
+  border-right: none;
+  margin: 0;
+  padding: 0;
+  height: inherit;
+  flex: 1;
+}
+.forien-armoury.magical-endurance-header .magical-endurance-box .input input {
+  text-align: center;
+  margin: 0;
+  padding: 3px 0 0 0;
+  height: 23px;
+  width: 100%;
+  background: none;
+  font-family: CaslonAntique, serif;
+  font-weight: 500;
+  font-size: var(--font-size-16);
+  display: inline-block;
+  color: #111;
+}
+
+#forien-armoury-settings-app form {
+  padding: 8px 3px;
+  overflow: hidden;
+}
+#forien-armoury-settings-app form .tabs {
+  font-family: CaslonAntique, serif;
+  height: 30px;
+}
+#forien-armoury-settings-app form .tabs .item {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  align-self: end;
+  height: 75%;
+  width: 100%;
+  margin: 0 -5px;
+  background-color: #352516;
+  border-radius: 10px 10px 0 0;
+  border: 1px solid #110a04;
+}
+#forien-armoury-settings-app form .tabs .item:first-of-type {
+  margin-left: 0;
+}
+#forien-armoury-settings-app form .tabs .item:last-of-type {
+  margin-right: 0;
+}
+#forien-armoury-settings-app form .tabs .item.active {
+  height: 100%;
+  font-size: var(--font-size-16);
+  align-items: flex-start;
+  padding-top: 5px;
+  z-index: 1;
+}
+#forien-armoury-settings-app form .content {
+  width: 100%;
+  height: calc(100% - 25px - 30px - 5px);
+  font-family: CaslonPro, serif;
+  background-color: rgba(26, 16, 7, 0.75);
+  border: 1px solid #110a04;
+  padding: 6px 10px;
+  border-radius: 0 0 5px 5px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+#forien-armoury-settings-app form .content .form-group {
+  margin: 6px 0;
+  background-color: rgba(8, 8, 8, 0.75);
+  padding: 4px;
+}
+#forien-armoury-settings-app form .content .settings-enabled {
+  display: none;
+  margin-top: 8px;
+}
+#forien-armoury-settings-app form .content .settings-enabled.active {
+  display: block;
+}
+#forien-armoury-settings-app form .content .settings-group {
+  margin: 6px 0;
+  padding: 2px 6px;
+  border: solid 2px #352516;
+  border-radius: 4px;
+}
+#forien-armoury-settings-app form .content input[type=checkbox] {
+  box-shadow: none;
+}
+#forien-armoury-settings-app form .content input[type=checkbox]:checked {
+  accent-color: #352516;
+}
+#forien-armoury-settings-app form button[type=submit] {
+  margin-top: 5px;
+}
+#forien-armoury-settings-app form .promo {
+  border: 3px solid #352516;
+  border-radius: 5px;
+  padding: 4px 8px;
+}
+#forien-armoury-settings-app form .promo p {
+  font-family: "Lato", sans-serif;
+  text-align: justify;
+}
+#forien-armoury-settings-app form .promo a {
+  cursor: pointer;
+}
+#forien-armoury-settings-app form .promo .support-links {
+  text-align: center;
+  margin: 10px 0;
+}
+#forien-armoury-settings-app form .promo .support-links a {
+  display: inline-block;
+  height: 30px;
+  text-decoration: none;
+}
+#forien-armoury-settings-app form .promo .support-links a:hover {
+  box-shadow: #a08349 0 0 6px 4px;
+}
+#forien-armoury-settings-app form .promo .other-links p {
+  text-align: left;
 }
 
 .app.window-app.sheet.wfrp4e.actor .tab.inventory.active .inventory-header.inventory-container.level-1 .column-section {

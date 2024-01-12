@@ -1,6 +1,59 @@
 # Changelog
 
 ## v1.X.X
+
+### v1.4.1
+* Fixed harmless console error that appeared when creating new Item on Actor that isn't a Disease
+
+### v1.4.0
+* Added accessory: Amulet of „Resilience“
+* Added new career: Monster Hunter
+  * This career utilizes one of three unique Fighting Styles and focuses on tracking down and fighting monstrous beasts
+* Added new journal: Forien's Lore
+  * Describing Hunters' Guild and Runebounds
+* Added 8 new Talents
+  * `Fighting Style (Any)` and `Fighting Master (Style)` along with variant for every of the three styles.
+* Added 4 symptoms made by RassilonMonk
+* Added 5 new Diseases by RassilonMonk
+* Added a `Drunk` Trait
+* Added a general Macro to quickly open the Forien's Armoury Settings
+* Reworked structure of `.mjs` files in the module, since codebase grows
+* Created Settings App, which allows to display settings in more visually appealing and intuitive way
+* Modified some icons by adding a wfrp4e-style border to them.
+* Improved the API and streamlined a lot of code responsible for handling ESModules.
+  * API is now version `1.1.0`, should be backwards-compatible.
+* Added `Casting Fatigue` feature, proposed and designed by VividOblivion. 
+* Created a `WorldTimeObserver`, which allows me to track world time updates and fire off events based on passed time
+* Hooked up Magical Endurance Regeneration (from Casting Fatigue) to the `WorldTimeObserver` for automated regeneration
+  * This requires some time tracking module (like `Simple Calendar`) to actually modify the `World Time` setting.
+* Created am Automatic Disease Progression, which will progress diseases' duration and incubation automatically
+  * This requires some time tracking module (like `Simple Calendar`) to actually modify the `World Time` setting.
+* Improved Debug readability, by adding tags based on ESModule name, as well as trace to warnings and errors. 
+
+### v1.3.2
+* Added full debug support. Can be enabled in settings (client side)
+  * Use `Forien's Armoury` as filter in console to only see this module's messages
+
+### v1.3.1
+* Added three accessories: Amulet of „Protection“, Elegant Pipe and Spectacles
+* Fixed arrow items' image paths
+* Fixed weird edge case with Roll Limited Skill macro
+* Fixed Combat Fatigue counting wrong amount of turns
+
+### v1.3.0
+* Reintroduced the Slashing, Recoverable and Unrecoverable properties for weapons and ammunition
+* Introduced new Incendiary, Poisonous and Blinding qualities
+* Unbreakable quality now ensures ammunition will be recovered
+* Added Combat Fatigue feature (implementing Getting Tired from CRB p.168)
+* Added new items
+  * Cutlass, Light Bomb, Cracker Bullet, Razor Bullet, Poisoned Arrows, Fire Arrows, Winged Arrows
+* Changed Torch (weapon) to use Incendiary quality instead of effect
+* Added Repulsive trait
+* Added macro for testing Advanced Skills with result limits
+* Updated the Journals with new information
+* Minor fixes to items (improved gunpowder, powder horns)
+* Fixed error with Arrow Reclamation
+
 ### v1.2.1
 * Fixed remaining item links in compendiums
 * Fixed ReImport not deleting old stuff

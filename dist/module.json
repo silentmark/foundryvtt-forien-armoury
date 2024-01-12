@@ -18,33 +18,29 @@
       }
   ],
   "compatibility": {
-      "minimum": "11",
-      "verified": "11"
+    "minimum": "11",
+    "verified": "11.315"
   },
   "relationships": {
-      "systems": [
-          {
-              "id": "wfrp4e",
-              "type": "system",
-              "compatibility": {
-                "minimum": "7.0.0"
-              }
-          }
-      ],
-      "recommends": [
-          {
-              "id": "ATL",
-              "type": "module"
-          },
-          {
-              "id": "item-piles",
-              "type": "module"
-          },
-          {
-              "id": "times-up",
-              "type": "module"
-          }
-      ]
+    "systems": [
+      {
+        "id": "wfrp4e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "7.0.0"
+        }
+      }
+    ],
+    "recommends": [
+      {
+        "id": "times-up",
+        "type": "module"
+      },
+      {
+        "id": "foundryvtt-simple-calendar",
+        "type": "module"
+      }
+    ]
   },
   "packs": [
       {
