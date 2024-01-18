@@ -175,6 +175,13 @@ export default class SettingsApp extends FormApplication {
         }
       },
 
+      scrolls: {
+        always: [
+          settings.scrolls.allowOvercasting,
+          settings.scrolls.ownCategory
+        ]
+      },
+
       integrations: {
         groups: [
           [

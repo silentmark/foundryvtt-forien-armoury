@@ -5,6 +5,10 @@ const constants = {
   loopLimit: 100
 };
 
+const dataTypes = {
+  scroll: `${constants.moduleId}.scroll`
+}
+
 const defaults = {}
 
 const flags = {
@@ -81,7 +85,11 @@ const settings = {
   },
   diseases: {
     autoProgress: 'diseases.automateProgression'
+  },
+  scrolls: {
+    allowOvercasting: 'scrolls.allowOvercasting',
+    ownCategory: 'scrolls.ownCategory'
   }
 }
 
-export {constants, defaults, flags, settings};
+export {constants, dataTypes, defaults, flags, settings};

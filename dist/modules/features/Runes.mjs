@@ -6,7 +6,7 @@ export default class TemporaryRunes {
   }
 
   #onEffectUpdate(effect, update, _data) {
-    if (this.#isRuneTemporary(effect) && effect.parent instanceof Actor || effect.parent?.parent instanceof Actor) {
+    if (this.#isRuneTemporary(effect) && (effect.parent instanceof Actor || effect.parent?.parent instanceof Actor)) {
       debug('[TemporaryRunes] Effect Updated is a rune', {effect, update, _data});
 
       if (update.disabled === true) {

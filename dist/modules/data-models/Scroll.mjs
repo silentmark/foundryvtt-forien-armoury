@@ -1,0 +1,119 @@
+const fields = foundry.data.fields;
+
+/**
+ * @extends PhysicalItemModel
+ * @mixes PropertiesMixin
+ * @category - Documents
+ */
+export default class ScrollModel extends PropertiesMixin(PhysicalItemModel) {
+
+  static defineSchema() {
+    let schema = super.defineSchema();
+
+    schema.spellUuid = new fields.StringField({blank: true, nullable: true, initial: null});
+    schema.language = new fields.StringField({blank: true, nullable: true, initial: game.i18n.localize("SPEC.Magick")});
+
+    return schema;
+  }
+
+  /**
+   *
+   * @returns {ItemWfrp4e|{folder:string,img:string,name:string,pack:string,sort:number,type:string,uuid:string,_id:string}}
+   */
+  get spell() {
+    return fromUuidSync(this.spellUuid);
+  }
+
+  async loadSpell() {
+    return await fromUuid(this.spellUuid);
+  }
+
+  get canUse() {
+    const notZero = this.quantity.value > 0;
+    const knowsLanguage = this.languageSkill;
+
+    return notZero && knowsLanguage;
+  }
+
+  get isMagick() {
+    return this.language.toLowerCase() === game.i18n.localize("SPEC.Magick").toLowerCase();
+  }
+
+  get languageSkill() {
+    return this.parent.actor?.itemTypes.skill.find(skill => skill.name.toLowerCase() === this.languageSkillName.toLowerCase());
+  }
+
+  get languageSkillName() {
+    return `${game.i18n.localize("NAME.Language")} (${this.language})`;
+  }
+
+  // *** Creation ***
+  async preCreateData(data, options, user)
+  {
+    const preCreateData = await super.preCreateData(data, options, user);
+
+    if (!data.img || data.img === "icons/svg/item-bag.svg" || data.img === "systems/wfrp4e/icons/blank.png") {
+      const number = data.name.match(/(\(\d+\))/i)[1];
+      preCreateData.img = "icons/sundries/scrolls/scroll-bound-green.webp";
+      preCreateData.name = game.i18n.localize("Forien.Armoury.Scrolls.NewScrollDefaultName") + ` ${number}`;
+    }
+
+    return preCreateData;
+  }
+
+  updateChecks(data, options, user) {
+    super.updateChecks(data);
+
+    if (data.system?.spellUuid) {
+      this.#promptForScrollNameChange();
+    }
+  }
+
+  async #promptForScrollNameChange() {
+    const scrollName = game.i18n.format("Forien.Armoury.Scrolls.ScrollOf", {spell: this.spell.name});
+
+    const agreed = await Dialog.confirm({
+      title: 'Forien.Armoury.Scrolls.ChangeScrollNameTitle',
+      content: game.i18n.format("Forien.Armoury.Scrolls.ChangeScrollNameContent", {name: scrollName})
+    });
+
+    if (agreed === true)
+      this.parent.update({name: scrollName});
+  }
+
+  async expandData(htmlOptions) {
+    let data = await super.expandData(htmlOptions);
+
+    data.properties.push(this.language);
+
+    if (this.spell) {
+      /**
+       * @type {ItemWfrp4e}
+       */
+      let spell = await fromUuid(this.spell.uuid);
+      data.properties.push(`<a class="scroll-spell-link" data-uuid="${spell.uuid}">${spell.name}</a>`);
+
+      const lore = game.wfrp4e.config.magicLores[spell.system?.lore?.value] ?? null;
+      const loreLabel = game.i18n.format("Forien.Armoury.Scrolls.LoreOf", {lore});
+      if (lore)
+        data.properties.push(loreLabel);
+
+      data.properties.push(spell.system.ritual?.value ? game.i18n.localize("ITEM.Ritual") : false);
+      data.properties.push(spell.system.magicMissile?.value ? game.i18n.localize("Magic Missile") : false);
+      data.properties.push(spell.system.target?.aoe ? game.i18n.localize("AoE") : false);
+      data.properties.push(spell.system.range?.vortex ? game.i18n.localize("ITEM.RandomVortex") : false);
+
+      const buttonLabel = game.i18n.format("Forien.Armoury.Scrolls.CastFromScroll", {spell: spell.name});
+      data.other.push(`<a class="scroll-spell-cast">${buttonLabel}</a>`);
+    }
+
+    let itemProperties = this.OriginalQualities.concat(this.OriginalFlaws)
+    for (let prop of itemProperties)
+      data.properties.push("<a class ='item-property'>" + prop + "</a>")
+
+    data.properties = data.properties.filter(p => !!p);
+
+    return data;
+  }
+
+}
