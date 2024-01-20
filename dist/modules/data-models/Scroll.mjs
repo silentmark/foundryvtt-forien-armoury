@@ -1,3 +1,7 @@
+import Utility from "../utility/Utility.mjs";
+import {settings} from "../constants.mjs";
+import ScrollDialog from "../apps/ScrollDialog.mjs";
+
 const fields = foundry.data.fields;
 
 /**
@@ -7,6 +11,11 @@ const fields = foundry.data.fields;
  */
 export default class ScrollModel extends PropertiesMixin(PhysicalItemModel) {
 
+  /**
+   * @inheritDoc
+   *
+   * @returns {DataSchema}
+   */
   static defineSchema() {
     let schema = super.defineSchema();
 
@@ -24,10 +33,16 @@ export default class ScrollModel extends PropertiesMixin(PhysicalItemModel) {
     return fromUuidSync(this.spellUuid);
   }
 
+  /**
+   * @returns {Promise<ItemWfrp4e|null>}
+   */
   async loadSpell() {
     return await fromUuid(this.spellUuid);
   }
 
+  /**
+   * @returns {boolean}
+   */
   get canUse() {
     const notZero = this.quantity.value > 0;
     const knowsLanguage = this.languageSkill;
@@ -35,21 +50,39 @@ export default class ScrollModel extends PropertiesMixin(PhysicalItemModel) {
     return notZero && knowsLanguage;
   }
 
+  /**
+   * @returns {boolean}
+   */
   get isMagick() {
     return this.language.toLowerCase() === game.i18n.localize("SPEC.Magick").toLowerCase();
   }
 
+  /**
+   *
+   * @returns {ItemWfrp4e|undefined}
+   */
   get languageSkill() {
     return this.parent.actor?.itemTypes.skill.find(skill => skill.name.toLowerCase() === this.languageSkillName.toLowerCase());
   }
 
+  /**
+   *
+   * @returns {string}
+   */
   get languageSkillName() {
     return `${game.i18n.localize("NAME.Language")} (${this.language})`;
   }
 
   // *** Creation ***
-  async preCreateData(data, options, user)
-  {
+  /**
+   * @inheritDoc
+   *
+   * @param data
+   * @param options
+   * @param user
+   * @returns {Promise<{}>}
+   */
+  async preCreateData(data, options, user) {
     const preCreateData = await super.preCreateData(data, options, user);
 
     if (!data.img || data.img === "icons/svg/item-bag.svg" || data.img === "systems/wfrp4e/icons/blank.png") {
@@ -61,6 +94,13 @@ export default class ScrollModel extends PropertiesMixin(PhysicalItemModel) {
     return preCreateData;
   }
 
+  /**
+   * @inheritDoc
+   *
+   * @param data
+   * @param options
+   * @param user
+   */
   updateChecks(data, options, user) {
     super.updateChecks(data);
 
@@ -69,18 +109,46 @@ export default class ScrollModel extends PropertiesMixin(PhysicalItemModel) {
     }
   }
 
+  /**
+   * @inheritDoc
+   *
+   * @returns {Promise<void>}
+   */
   async #promptForScrollNameChange() {
-    const scrollName = game.i18n.format("Forien.Armoury.Scrolls.ScrollOf", {spell: this.spell.name});
+    const setting = Utility.getSetting(settings.scrolls.updateName);
 
-    const agreed = await Dialog.confirm({
-      title: 'Forien.Armoury.Scrolls.ChangeScrollNameTitle',
-      content: game.i18n.format("Forien.Armoury.Scrolls.ChangeScrollNameContent", {name: scrollName})
-    });
+    if (setting === settings.scrolls.never) return;
+
+    const spell = await this.loadSpell();
+    const scrollName = game.i18n.format("Forien.Armoury.Scrolls.ScrollOf", {spell: spell.name});
+    const updateData = {name: scrollName};
+
+    let content = game.i18n.format("Forien.Armoury.Scrolls.ChangeScrollNameContent", updateData);
+
+    if (Utility.getSetting(settings.scrolls.replaceDescription)) {
+      content += "<br>" + game.i18n.localize("Forien.Armoury.Scrolls.ChangeScrollDescription");
+      updateData["system.description.value"] = spell.description.value;
+    }
+
+    let agreed = true;
+
+    if (setting === settings.scrolls.ask) {
+      agreed = await Dialog.confirm({
+        title: 'Forien.Armoury.Scrolls.ChangeScrollNameTitle',
+        content
+      });
+    }
 
     if (agreed === true)
-      this.parent.update({name: scrollName});
+      this.parent.update(updateData);
   }
 
+  /**
+   * @inheritDoc
+   *
+   * @param htmlOptions
+   * @returns {Promise<{}>}
+   */
   async expandData(htmlOptions) {
     let data = await super.expandData(htmlOptions);
 
@@ -116,4 +184,49 @@ export default class ScrollModel extends PropertiesMixin(PhysicalItemModel) {
     return data;
   }
 
+
+  /**
+   * Prepares the Scroll Dialog and performs the Scroll Test
+   *
+   * @returns {Promise<ScrollTest|null>}
+   */
+  async prepareScrollTest() {
+    /**
+     * @type {ActorWfrp4e}
+     */
+    const actor = this.parent.actor;
+    if (!actor) return null;
+
+    const compendiumSpell = await this.loadSpell();
+    const spellData = compendiumSpell.toObject();
+    const skill = this.languageSkill;
+
+    spellData.system.memorized.value = true;
+    spellData.system.cn.value = 0;
+    spellData.system.skill.value = skill.name;
+
+    let difficulty = Utility.getSetting(settings.scrolls.difficulty);
+
+    if (this.isMagick)
+      difficulty = Utility.getSetting(settings.scrolls.difficultyMagick);
+
+    const spell = new CONFIG.Item.documentClass(spellData, {parent: actor});
+    spell.system.computeOvercastingData();
+
+    const dialogData = {
+      fields: {
+        difficulty
+      },
+      data: {
+        scroll: this.parent,
+        spell,
+        hitLoc: !!spell.system.damage.value,
+        skill: skill
+      },
+      options: {}
+    }
+
+    const test = await actor._setupTest(dialogData, ScrollDialog)
+    return await test.roll();
+  }
 }
