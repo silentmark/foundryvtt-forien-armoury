@@ -1,6 +1,7 @@
-import Utility from "./Utility.mjs";
+import Utility from "../utility/Utility.mjs";
+import ForienBaseModule from "../utility/ForienBaseModule.mjs";
 
-export default class TemporaryRunes {
+export default class TemporaryRune extends ForienBaseModule {
   bindHooks() {
     Hooks.on("updateActiveEffect", this.#onEffectUpdate.bind(this));
   }
